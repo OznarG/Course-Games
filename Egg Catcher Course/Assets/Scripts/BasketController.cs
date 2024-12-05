@@ -5,8 +5,8 @@ using UnityEngine;
 public class BasketController : MonoBehaviour
 {
     Vector3 touchPos;
-    public float moveRate = 0.2f;
-
+    public float moveRate = 0.02f;
+    public float limitX;
 
 
     // Start is called before the first frame update
@@ -18,14 +18,17 @@ public class BasketController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
             touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Vector3 newPos = transform.position;
             newPos.x = touchPos.x;
 
-            transform.position = newPos;
+            newPos.x = Mathf.Clamp(newPos.x, -limitX, limitX);
+
+            transform.position = Vector3.Lerp(transform.position, newPos, moveRate);
+
         }
     }
 }
