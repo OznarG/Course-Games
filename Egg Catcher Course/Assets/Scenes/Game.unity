@@ -675,6 +675,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1154362106}
   spawnSpeed: 1
   maxPos: 2.5
+  scoreText: {fileID: 46326001}
 --- !u!1 &1154362105
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
 
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float maxPos;
     int score = 0;
 
+    public TextMeshProUGUI scoreText;
     private void Awake()
     {
         instance = this;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         score++;
+        scoreText.text = score.ToString();
         print(score);
     }
 
