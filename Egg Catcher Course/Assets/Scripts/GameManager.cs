@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float spawnSpeed = 1.0f;
 
     public float maxPos;
+    int score = 0;
 
     private void Awake()
     {
@@ -48,6 +49,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(spawnSpeed);
          
         }
+    }
+
+    public void AddScore()
+    {
+        score++;
+        print(score);
     }
 
     public void GameStart()

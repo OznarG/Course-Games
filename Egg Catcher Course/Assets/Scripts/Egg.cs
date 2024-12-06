@@ -28,6 +28,7 @@ public class Egg : MonoBehaviour
         if(collision.tag == "InsideBasket")
         {
             //increase score
+            GameManager.instance.AddScore();
             Destroy(gameObject);
         }
     }
