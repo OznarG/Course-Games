@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     bool gameOver = false;
 
     public float spawnSpeed = 1.0f;
-    public int score;
+
+    public float maxPos;
 
     private void Awake()
     {
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
     }
     void SpawnEgg()
     {
+        float randomX = Random.Range(-maxPos, maxPos);
+        spawnPosition.x = randomX;
         Instantiate(egg, spawnPosition, Quaternion.identity);
     }
 
