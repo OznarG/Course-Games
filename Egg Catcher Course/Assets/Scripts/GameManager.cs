@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     int score = 0;
 
     public TextMeshProUGUI scoreText;
+    public GameObject startUI;
+    public GameObject basket;
+
     private void Awake()
     {
         instance = this;
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         spawnPosition = spawnPoint.position;
-        StartCoroutine("SpawnEggs");
+        //StartCoroutine("SpawnEggs");
     }
 
     // Update is called once per frame
@@ -61,7 +64,10 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-
+        startUI.SetActive(false);
+        scoreText.gameObject.SetActive(true);
+        basket.SetActive(true);
+        StartCoroutine("SpawnEggs");
     }
 
     public void GameOver()

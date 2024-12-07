@@ -501,7 +501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!68 &655871803
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -676,6 +676,8 @@ MonoBehaviour:
   spawnSpeed: 1
   maxPos: 2.5
   scoreText: {fileID: 46326001}
+  startUI: {fileID: 1229868220}
+  basket: {fileID: 655871802}
 --- !u!1 &1145958374
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1145958377}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883799607}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1145958377
 MonoBehaviour:
   m_ObjectHideFlags: 0
