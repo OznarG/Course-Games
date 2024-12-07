@@ -19,7 +19,8 @@ public class Egg : MonoBehaviour
     {
         if(transform.position.y < breakPoint)
         {
-            Destroy(gameObject);
+            GameManager.instance.GameOver();
+            //Destroy(gameObject);
         }
 
     }

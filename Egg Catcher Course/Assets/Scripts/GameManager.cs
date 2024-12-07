@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
 
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public GameObject startUI;
+    public GameObject gameOverUI;
     public GameObject basket;
 
     private void Awake()
@@ -72,11 +75,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        StopCoroutine("SpawnEggs");
+        gameOverUI.SetActive(true);
+        scoreText.gameObject.SetActive(false);
+        basket.SetActive(false);
     }
 
     public void Replay()
     {
-
+        SceneManager.LoadScene(0);
     }
 }
