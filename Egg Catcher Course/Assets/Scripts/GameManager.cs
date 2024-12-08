@@ -76,8 +76,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StopCoroutine("SpawnEggs");
-        gameOverUI.SetActive(true);
-        scoreText.gameObject.SetActive(false);
+        gameOverUI.SetActive(true);      
         basket.SetActive(false);
     }
 
