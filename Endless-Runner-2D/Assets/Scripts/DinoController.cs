@@ -12,9 +12,12 @@ public class DinoController : MonoBehaviour
     bool gameOver = false;
     bool grounded = false;
 
+    Animator anim;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class DinoController : MonoBehaviour
         grounded = false;
 
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Impulse so looks better
+        anim.SetTrigger("Jump");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
