@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject obstacleSpawner;
+
     private void Awake()
     {
         instance = this;
@@ -15,6 +17,8 @@ public class GameManager : MonoBehaviour
     {
         StopScrolling();
         StopObstavles();
+
+        obstacleSpawner.SetActive(false);
     }
 
     void StopScrolling()
