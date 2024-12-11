@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public GameObject obstacleSpawner;
+
+    public int score = 0;
+
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -41,5 +46,11 @@ public class GameManager : MonoBehaviour
                 o.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
         }
+    }
+
+    public void IncrementScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
     }
 }

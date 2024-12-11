@@ -9,6 +9,10 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField] float moveSpeed;
 
+    [SerializeField] float scorePoint = -7f;
+
+    bool scoreUpdated = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,9 +26,17 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if((transform.position.x < scorePoint) && !scoreUpdated)
+        {
+            scoreUpdated = true;
+            GameManager.instance.IncrementScore();
+        }
+
         if(transform.position.x < -15f)
         {
             Destroy(gameObject);
         }
     }
+
+   
 }
