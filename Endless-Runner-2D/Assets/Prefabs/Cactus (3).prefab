@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  scorePoint: -7
 --- !u!212 &6907098197034371139
 SpriteRenderer:
   m_ObjectHideFlags: 0

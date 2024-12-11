@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField] float moveSpeed;
 
-    [SerializeField] float scorePoint = -7f;
+    [SerializeField] float scorePoint;
 
     bool scoreUpdated = false;
 
