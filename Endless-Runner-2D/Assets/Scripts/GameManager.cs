@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public GameObject obstacleSpawner;
+    public GameObject gameOverPanel;
 
     public int score = 0;
 
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
         StopObstavles();
 
         obstacleSpawner.SetActive(false);
+        gameOverPanel.SetActive(true);
     }
 
     void StopScrolling()
@@ -52,5 +55,15 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
